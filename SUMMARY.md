@@ -1,6 +1,5 @@
 # Summary
 
-* [Introduction](README.md)
 * [Overview](overview/readme.md)
     * [建立 Bottender 專案](overview/getting-started.md)
 * [開始使用 Typescript](ts/readme.md)
