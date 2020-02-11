@@ -13,6 +13,6 @@ createConnection()
   .catch(error => console.log(error));
 
 export default async function App(context: any) {
-  await context.sendText("hello");
+  await context.sendText("hello typeorm");
 }
 ```

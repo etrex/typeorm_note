@@ -1,8 +1,6 @@
 # 設定 ormconfig.js
 
-Typeorm 會讀取專案根目錄下的 ormconfig 這個設定檔來進行初始化。
-
-以下是一個 ormconfig 的範例：
+請新增 ormconfig.js 到專案根目錄，內容如下：
 
 ```js
 const config = {
@@ -22,6 +20,19 @@ const config = {
 
 module.exports = config;
 ```
+
+在 `.env` 中加入以下內容：
+
+```
+# DB
+POSTGRESQL_URL=postgresql://:localhost:5432/typeorm_test
+TYPEORM_LOGGING=true
+```
+
+
+# 參數解說
+
+Typeorm 會讀取專案根目錄下的 ormconfig 這個設定檔來進行初始化。
 
 以下將一一說明其意義：
 
@@ -49,6 +60,8 @@ postgresql://user:secret@localhost
 postgresql://other@localhost/otherdb?connect_timeout=10&application_name=myapp
 postgresql://localhost/mydb?user=other&password=secret
 ```
+
+一般來說連到本機是使用 `postgresql://localhost:5432/{database_name}`
 
 ## synchronize
 是否在連上 server 時自動進行資料庫 schema 的同步，在官方文件中說明不建議在 production 環境中開啟，所以就不建議使用。

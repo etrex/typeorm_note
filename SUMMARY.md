@@ -12,6 +12,7 @@
     * [設定 ormconfig.json](typeorm/ormconfig.md)
     * [建立 Connection](typeorm/connection.md)
 * [資料庫遷移 - Migration](migration/readme.md)
+    * [建立資料庫](migration/create-database.md)
     * [建立 Entity](migration/create-entity.md)
     * [自動生成 Migratione](migration/generate-migration.md)
     * [執行 Migratione](migration/run-migration.md)
