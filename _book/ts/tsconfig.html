@@ -1,0 +1,683 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>設定 tsconfig.json · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="package.html" />
+    
+    
+    <link rel="prev" href="file-extension.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../overview/readme.html">
+            
+                <a href="../overview/readme.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../overview/getting-started.html">
+            
+                <a href="../overview/getting-started.html">
+            
+                    
+                    建立 Bottender 專案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    開始使用 Typescript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="file-extension.html">
+            
+                <a href="file-extension.html">
+            
+                    
+                    修改副檔名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="tsconfig.html">
+            
+                <a href="tsconfig.html">
+            
+                    
+                    設定 tsconfig.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="package.html">
+            
+                <a href="package.html">
+            
+                    
+                    設定 package.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="build.html">
+            
+                <a href="build.html">
+            
+                    
+                    編譯
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../typeorm/readme.html">
+            
+                <a href="../typeorm/readme.html">
+            
+                    
+                    開始使用 Typeorm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../typeorm/install.html">
+            
+                <a href="../typeorm/install.html">
+            
+                    
+                    安裝 Typeorm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../typeorm/ormconfig.html">
+            
+                <a href="../typeorm/ormconfig.html">
+            
+                    
+                    設定 ormconfig.json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../typeorm/connection.html">
+            
+                <a href="../typeorm/connection.html">
+            
+                    
+                    建立 Connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../migration/readme.html">
+            
+                <a href="../migration/readme.html">
+            
+                    
+                    資料庫遷移 - Migration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../migration/create-entity.html">
+            
+                <a href="../migration/create-entity.html">
+            
+                    
+                    建立 Entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../migration/generate-migration.html">
+            
+                <a href="../migration/generate-migration.html">
+            
+                    
+                    自動生成 Migratione
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../migration/run-migration.html">
+            
+                <a href="../migration/run-migration.html">
+            
+                    
+                    執行 Migratione
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../entity/readme.html">
+            
+                <a href="../entity/readme.html">
+            
+                    
+                    資料模型 - Entity
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../entity/column-type.html">
+            
+                <a href="../entity/column-type.html">
+            
+                    
+                    明確指定 Column 的類型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../entity/column-default.html">
+            
+                <a href="../entity/column-default.html">
+            
+                    
+                    Column 預設值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../entity/column-nullable.html">
+            
+                <a href="../entity/column-nullable.html">
+            
+                    
+                    指定 Column 是否為空
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../entity/validation.html">
+            
+                <a href="../entity/validation.html">
+            
+                    
+                    資料驗證 - Validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../entity/">
+            
+                <a href="../entity/">
+            
+                    
+                    索引 - Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../entity/base-entity.html">
+            
+                <a href="../entity/base-entity.html">
+            
+                    
+                    Base Entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../relation/readme.html">
+            
+                <a href="../relation/readme.html">
+            
+                    
+                    關聯 - Relation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../relation/one-to-one.html">
+            
+                <a href="../relation/one-to-one.html">
+            
+                    
+                    建立一對一關聯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../relation/one-to-many.html">
+            
+                <a href="../relation/one-to-many.html">
+            
+                    
+                    建立一對多關聯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../relation/many-to-many.html">
+            
+                <a href="../relation/many-to-many.html">
+            
+                    
+                    建立多對多關聯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../relation/eager-and-lazy.html">
+            
+                <a href="../relation/eager-and-lazy.html">
+            
+                    
+                    Eager 和 Lazy 的毛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../relation/insert.html">
+            
+                <a href="../relation/insert.html">
+            
+                    
+                    寫入關聯的方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../relation/query.html">
+            
+                <a href="../relation/query.html">
+            
+                    
+                    查詢關聯的方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../relation/readme.html">
+            
+                <a href="../relation/readme.html">
+            
+                    
+                    交易 - Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >設定 tsconfig.json</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x8A2D;&#x5B9A;-tsconfigjson">&#x8A2D;&#x5B9A; tsconfig.json</h1>
+<p>&#x65B0;&#x589E;&#x8A2D;&#x5B9A;&#x6A94; <code>tsconfig.json</code> &#x5230;&#x5C08;&#x6848;&#x6839;&#x76EE;&#x9304;&#xFF0C;&#x5176;&#x5167;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;include&quot;</span>: [<span class="hljs-string">&quot;src/**/*&quot;</span>],
+  <span class="hljs-string">&quot;exclude&quot;</span>: [<span class="hljs-string">&quot;**/__tests__&quot;</span>, <span class="hljs-string">&quot;**/*.{spec,test}.ts&quot;</span>],
+  <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
+    <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>,
+    <span class="hljs-string">&quot;lib&quot;</span>: [<span class="hljs-string">&quot;es2017&quot;</span>, <span class="hljs-string">&quot;esnext.asynciterable&quot;</span>],
+    <span class="hljs-string">&quot;module&quot;</span>: <span class="hljs-string">&quot;commonjs&quot;</span>,
+    <span class="hljs-string">&quot;skipLibCheck&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;moduleResolution&quot;</span>: <span class="hljs-string">&quot;node&quot;</span>,
+    <span class="hljs-string">&quot;esModuleInterop&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;emitDecoratorMetadata&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;experimentalDecorators&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;forceConsistentCasingInFileNames&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;resolveJsonModule&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;isolatedModules&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;rootDir&quot;</span>: <span class="hljs-string">&quot;./src&quot;</span>,
+    <span class="hljs-string">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./dist&quot;</span>,
+    <span class="hljs-string">&quot;types&quot;</span>: [<span class="hljs-string">&quot;node&quot;</span>, <span class="hljs-string">&quot;jest&quot;</span>],
+    <span class="hljs-string">&quot;strict&quot;</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="file-extension.html" class="navigation navigation-prev " aria-label="Previous page: 修改副檔名">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="package.html" class="navigation navigation-next " aria-label="Next page: 設定 package.json">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"設定 tsconfig.json","level":"1.3.2","depth":2,"next":{"title":"設定 package.json","level":"1.3.3","depth":2,"path":"ts/package.md","ref":"ts/package.md","articles":[]},"previous":{"title":"修改副檔名","level":"1.3.1","depth":2,"path":"ts/file-extension.md","ref":"ts/file-extension.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ts/tsconfig.md","mtime":"2020-02-10T16:13:53.859Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-11T03:40:30.591Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
