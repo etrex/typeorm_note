@@ -1,3 +1,11 @@
-# 修改副檔名
+# 修改檔案
 
-這個自己改
+將 `src/index.js` 的副檔名改為 `.ts`
+
+然後將 `module.exports = ` 改為 `export default`
+
+修改 `index.js` 如下：
+
+```
+module.exports = require('./dist').default;
+```
