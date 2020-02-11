@@ -29,7 +29,7 @@ tsc && typeorm migration:run
 5. 編譯 migration 的 `.js` 檔
 6. 執行 migration 的 `.js` 檔(typeorm migration:run)
 
-在每次修改完 entity 之後，需要執行的指令依順為：
+在每次修改完 entity 之後，需要執行的指令依序為：
 
 ```
 rm -rf dist
