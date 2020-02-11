@@ -1,9 +1,8 @@
 # Summary
 
-* [Overview](overview/readme.md)
-    * [建立 Bottender 專案](overview/getting-started.md)
+* [從建立 Bottender 專案開始](getting-started/readme.md)
 * [開始使用 Typescript](ts/readme.md)
-    * [修改副檔名](ts/file-extension.md)
+    * [修改檔案](ts/file-rewrite.md)
     * [設定 tsconfig.json](ts/tsconfig.md)
     * [設定 package.json](ts/package.md)
     * [編譯](ts/build.md)
