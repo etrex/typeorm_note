@@ -60,7 +60,7 @@
     <link rel="next" href="generate-migration.html" />
     
     
-    <link rel="prev" href="readme.html" />
+    <link rel="prev" href="create-database.html" />
     
 
     </head>
@@ -277,7 +277,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1" data-path="create-entity.html">
+        <li class="chapter " data-level="1.5.1" data-path="create-database.html">
+            
+                <a href="create-database.html">
+            
+                    
+                    建立資料庫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="create-entity.html">
             
                 <a href="create-entity.html">
             
@@ -290,7 +303,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="generate-migration.html">
+        <li class="chapter " data-level="1.5.3" data-path="generate-migration.html">
             
                 <a href="generate-migration.html">
             
@@ -303,7 +316,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="run-migration.html">
+        <li class="chapter " data-level="1.5.4" data-path="run-migration.html">
             
                 <a href="run-migration.html">
             
@@ -574,6 +587,30 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5EFA;&#x7ACB;-entity">&#x5EFA;&#x7ACB; Entity</h1>
+<p>&#x5047;&#x8A2D;&#x6211;&#x5011;&#x60F3;&#x8981;&#x5EFA;&#x7ACB;&#x4E00;&#x500B; Qna &#x7684;&#x8CC7;&#x6599;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B; question &#x548C; answer &#x5169;&#x500B;&#x6587;&#x5B57;&#x6B04;&#x4F4D;&#xFF1A;</p>
+<pre><code>typeorm entity:create -n Qna
+</code></pre><p>&#x6703;&#x751F;&#x6210;&#x4EE5;&#x4E0B;&#x7A0B;&#x5F0F;&#x78BC;&#xFF1A;</p>
+<pre><code>import {Entity} from &quot;typeorm&quot;;
+
+@Entity()
+export class Qna {
+
+}
+</code></pre><p>&#x65B0;&#x589E;&#x6B04;&#x4F4D;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x5728; Qna &#x4E2D;&#x52A0;&#x5165;&#x7A0B;&#x5F0F;&#x78BC;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>import {Entity, Column, PrimaryGeneratedColumn} from &quot;typeorm&quot;;
+
+@Entity()
+export class Qna {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  question: string;
+
+  @Column()
+  answer: string;
+}
+</code></pre><p>&#x6BCF;&#x4E00;&#x500B; entity &#x90FD;&#x9700;&#x8981;&#x6307;&#x5B9A; PrimaryColumn&#xFF0C;&#x5728;&#x9019;&#x88E1;&#x6211;&#x5011;&#x7528;&#x5E8F;&#x865F;&#x905E;&#x589E;&#x7684; id &#x4F86;&#x505A;&#x3002;</p>
 
                                 
                                 </section>
@@ -601,7 +638,7 @@
 
             
                 
-                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: 資料庫遷移 - Migration">
+                <a href="create-database.html" class="navigation navigation-prev " aria-label="Previous page: 建立資料庫">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -617,7 +654,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"建立 Entity","level":"1.5.1","depth":2,"next":{"title":"自動生成 Migratione","level":"1.5.2","depth":2,"path":"migration/generate-migration.md","ref":"migration/generate-migration.md","articles":[]},"previous":{"title":"資料庫遷移 - Migration","level":"1.5","depth":1,"path":"migration/readme.md","ref":"migration/readme.md","articles":[{"title":"建立 Entity","level":"1.5.1","depth":2,"path":"migration/create-entity.md","ref":"migration/create-entity.md","articles":[]},{"title":"自動生成 Migratione","level":"1.5.2","depth":2,"path":"migration/generate-migration.md","ref":"migration/generate-migration.md","articles":[]},{"title":"執行 Migratione","level":"1.5.3","depth":2,"path":"migration/run-migration.md","ref":"migration/run-migration.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"migration/create-entity.md","mtime":"2020-02-10T15:23:38.431Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-11T05:00:27.225Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"建立 Entity","level":"1.5.2","depth":2,"next":{"title":"自動生成 Migratione","level":"1.5.3","depth":2,"path":"migration/generate-migration.md","ref":"migration/generate-migration.md","articles":[]},"previous":{"title":"建立資料庫","level":"1.5.1","depth":2,"path":"migration/create-database.md","ref":"migration/create-database.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"migration/create-entity.md","mtime":"2020-02-11T05:51:17.568Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-11T06:13:12.876Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

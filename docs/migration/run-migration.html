@@ -277,7 +277,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="create-entity.html">
+        <li class="chapter " data-level="1.5.1" data-path="create-database.html">
+            
+                <a href="create-database.html">
+            
+                    
+                    建立資料庫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="create-entity.html">
             
                 <a href="create-entity.html">
             
@@ -290,7 +303,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="generate-migration.html">
+        <li class="chapter " data-level="1.5.3" data-path="generate-migration.html">
             
                 <a href="generate-migration.html">
             
@@ -303,7 +316,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.3" data-path="run-migration.html">
+        <li class="chapter active" data-level="1.5.4" data-path="run-migration.html">
             
                 <a href="run-migration.html">
             
@@ -578,7 +591,33 @@
 <blockquote>
 <p>typeorm migration:create and typeorm migration:generate will create .ts files. The migration:run and migration:revert commands only work on .js files. Thus the typescript files need to be compiled before running the commands.</p>
 </blockquote>
-
+<p>&#x524D;&#x9762;&#x6211;&#x5011;&#x4ECB;&#x7D39;&#x4E86; <code>typeorm migration:generate</code> &#x6307;&#x4EE4;&#xFF0C;&#x800C;&#x9019;&#x500B;&#x6307;&#x4EE4;&#x751F;&#x6210;&#x51FA;&#x4F86;&#x7684;&#x6A94;&#x6848;&#x662F; <code>.ts</code> &#x6A94;&#xFF0C;&#x4F46;&#x63A5;&#x4E0B;&#x4F86;&#x8981;&#x57F7;&#x884C; migration &#x6642;&#x6211;&#x5011;&#x9700;&#x8981;&#x7684;&#x6A94;&#x6848;&#x4ECD;&#x7136;&#x662F; <code>.js</code> &#x6A94;&#xFF0C;&#x65BC;&#x662F;&#x4E4E;&#x6211;&#x5011;&#x9700;&#x8981;&#x518D;&#x7DE8;&#x8B6F;&#x4E00;&#x6B21;&#x518D;&#x57F7;&#x884C;&#x3002;</p>
+<p>&#x8F38;&#x5165;&#x4EE5;&#x4E0B;&#x6307;&#x4EE4;&#x4F86;&#x7DE8;&#x8B6F;&#x8207;&#x57F7;&#x884C; migration&#xFF1A;</p>
+<pre><code>tsc &amp;&amp; typeorm migration:run
+</code></pre><p>&#x4E00;&#x500B;&#x6A19;&#x6E96;&#x7684; migration &#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x7DE8;&#x8F2F; entity &#x7684; <code>.ts</code> &#x6A94;</li>
+<li>&#x7DE8;&#x8B6F; entity &#x7684; <code>.js</code> &#x6A94;</li>
+<li>&#x751F;&#x6210; migration &#x7684; <code>.ts</code> &#x6A94;(typeorm migration:generate)</li>
+<li>&#x7DE8;&#x8B6F; migration &#x7684; <code>.js</code> &#x6A94;</li>
+<li>&#x57F7;&#x884C; migration &#x7684; <code>.js</code> &#x6A94;(typeorm migration:run)</li>
+</ol>
+<p>&#x7531;&#x65BC; tsc &#x4E26;&#x4E0D;&#x6703;&#x522A;&#x9664;&#x591A;&#x9918;&#x7684;&#x6A94;&#x6848;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x6703;&#x5EFA;&#x8B70;&#x5728;&#x4E0B;&#x6307;&#x4EE4;&#x4E4B;&#x524D;&#x5148;&#x522A;&#x9664;&#x6240;&#x6709; build &#x597D;&#x7684; <code>.js</code></p>
+<ol>
+<li>&#x7DE8;&#x8F2F; entity &#x7684; <code>.ts</code> &#x6A94;</li>
+<li>&#x522A;&#x9664; dist &#x8CC7;&#x6599;&#x593E;&#x4EE5;&#x53CA;&#x6240;&#x6709;&#x6A94;&#x6848;</li>
+<li>&#x7DE8;&#x8B6F; entity &#x7684; <code>.js</code> &#x6A94;</li>
+<li>&#x751F;&#x6210; migration &#x7684; <code>.ts</code> &#x6A94;(typeorm migration:generate)</li>
+<li>&#x7DE8;&#x8B6F; migration &#x7684; <code>.js</code> &#x6A94;</li>
+<li>&#x57F7;&#x884C; migration &#x7684; <code>.js</code> &#x6A94;(typeorm migration:run)</li>
+</ol>
+<p>&#x5728;&#x6BCF;&#x6B21;&#x4FEE;&#x6539;&#x5B8C; entity &#x4E4B;&#x5F8C;&#xFF0C;&#x9700;&#x8981;&#x57F7;&#x884C;&#x7684;&#x6307;&#x4EE4;&#x4F9D;&#x9806;&#x70BA;&#xFF1A;</p>
+<pre><code>rm -rf dist
+tsc
+typeorm migration:generate
+tsc
+typeorm migration:run
+</code></pre>
                                 
                                 </section>
                             
@@ -621,7 +660,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"執行 Migratione","level":"1.5.3","depth":2,"next":{"title":"資料模型 - Entity","level":"1.6","depth":1,"path":"entity/readme.md","ref":"entity/readme.md","articles":[{"title":"明確指定 Column 的類型","level":"1.6.1","depth":2,"path":"entity/column-type.md","ref":"entity/column-type.md","articles":[]},{"title":"Column 預設值","level":"1.6.2","depth":2,"path":"entity/column-default.md","ref":"entity/column-default.md","articles":[]},{"title":"指定 Column 是否為空","level":"1.6.3","depth":2,"path":"entity/column-nullable.md","ref":"entity/column-nullable.md","articles":[]},{"title":"資料驗證 - Validation","level":"1.6.4","depth":2,"path":"entity/validation.md","ref":"entity/validation.md","articles":[]},{"title":"索引 - Index","level":"1.6.5","depth":2,"path":"entity/index.md","ref":"entity/index.md","articles":[]},{"title":"Base Entity","level":"1.6.6","depth":2,"path":"entity/base-entity.md","ref":"entity/base-entity.md","articles":[]}]},"previous":{"title":"自動生成 Migratione","level":"1.5.2","depth":2,"path":"migration/generate-migration.md","ref":"migration/generate-migration.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"migration/run-migration.md","mtime":"2020-02-11T02:39:59.176Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-11T05:00:27.225Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"執行 Migratione","level":"1.5.4","depth":2,"next":{"title":"資料模型 - Entity","level":"1.6","depth":1,"path":"entity/readme.md","ref":"entity/readme.md","articles":[{"title":"明確指定 Column 的類型","level":"1.6.1","depth":2,"path":"entity/column-type.md","ref":"entity/column-type.md","articles":[]},{"title":"Column 預設值","level":"1.6.2","depth":2,"path":"entity/column-default.md","ref":"entity/column-default.md","articles":[]},{"title":"指定 Column 是否為空","level":"1.6.3","depth":2,"path":"entity/column-nullable.md","ref":"entity/column-nullable.md","articles":[]},{"title":"資料驗證 - Validation","level":"1.6.4","depth":2,"path":"entity/validation.md","ref":"entity/validation.md","articles":[]},{"title":"索引 - Index","level":"1.6.5","depth":2,"path":"entity/index.md","ref":"entity/index.md","articles":[]},{"title":"Base Entity","level":"1.6.6","depth":2,"path":"entity/base-entity.md","ref":"entity/base-entity.md","articles":[]}]},"previous":{"title":"自動生成 Migratione","level":"1.5.3","depth":2,"path":"migration/generate-migration.md","ref":"migration/generate-migration.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"migration/run-migration.md","mtime":"2020-02-11T06:12:44.516Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-11T06:13:12.876Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

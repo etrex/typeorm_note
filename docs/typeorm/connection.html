@@ -277,7 +277,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../migration/create-entity.html">
+        <li class="chapter " data-level="1.5.1" data-path="../migration/create-database.html">
+            
+                <a href="../migration/create-database.html">
+            
+                    
+                    建立資料庫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../migration/create-entity.html">
             
                 <a href="../migration/create-entity.html">
             
@@ -290,7 +303,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../migration/generate-migration.html">
+        <li class="chapter " data-level="1.5.3" data-path="../migration/generate-migration.html">
             
                 <a href="../migration/generate-migration.html">
             
@@ -303,7 +316,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../migration/run-migration.html">
+        <li class="chapter " data-level="1.5.4" data-path="../migration/run-migration.html">
             
                 <a href="../migration/run-migration.html">
             
@@ -585,7 +598,7 @@ createConnection()
   .catch(error =&gt; <span class="hljs-built_in">console</span>.log(error));
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> async <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params">context: <span class="hljs-built_in">any</span></span>) </span>{
-  await context.sendText(<span class="hljs-string">&quot;hello&quot;</span>);
+  await context.sendText(<span class="hljs-string">&quot;hello typeorm&quot;</span>);
 }
 </code></pre>
 
@@ -631,7 +644,7 @@ createConnection()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"建立 Connection","level":"1.4.3","depth":2,"next":{"title":"資料庫遷移 - Migration","level":"1.5","depth":1,"path":"migration/readme.md","ref":"migration/readme.md","articles":[{"title":"建立 Entity","level":"1.5.1","depth":2,"path":"migration/create-entity.md","ref":"migration/create-entity.md","articles":[]},{"title":"自動生成 Migratione","level":"1.5.2","depth":2,"path":"migration/generate-migration.md","ref":"migration/generate-migration.md","articles":[]},{"title":"執行 Migratione","level":"1.5.3","depth":2,"path":"migration/run-migration.md","ref":"migration/run-migration.md","articles":[]}]},"previous":{"title":"設定 ormconfig.json","level":"1.4.2","depth":2,"path":"typeorm/ormconfig.md","ref":"typeorm/ormconfig.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"typeorm/connection.md","mtime":"2020-02-11T04:10:22.766Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-11T05:00:27.225Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"建立 Connection","level":"1.4.3","depth":2,"next":{"title":"資料庫遷移 - Migration","level":"1.5","depth":1,"path":"migration/readme.md","ref":"migration/readme.md","articles":[{"title":"建立資料庫","level":"1.5.1","depth":2,"path":"migration/create-database.md","ref":"migration/create-database.md","articles":[]},{"title":"建立 Entity","level":"1.5.2","depth":2,"path":"migration/create-entity.md","ref":"migration/create-entity.md","articles":[]},{"title":"自動生成 Migratione","level":"1.5.3","depth":2,"path":"migration/generate-migration.md","ref":"migration/generate-migration.md","articles":[]},{"title":"執行 Migratione","level":"1.5.4","depth":2,"path":"migration/run-migration.md","ref":"migration/run-migration.md","articles":[]}]},"previous":{"title":"設定 ormconfig.json","level":"1.4.2","depth":2,"path":"typeorm/ormconfig.md","ref":"typeorm/ormconfig.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"typeorm/connection.md","mtime":"2020-02-11T05:27:43.643Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-11T06:13:12.876Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
