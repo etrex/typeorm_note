@@ -34,7 +34,7 @@ export default class Base extends BaseEntity {
       entity[key] = params[key];
     });
     await entity.save();
-    return await this.findOne(params);
+    return await this.findOne(entify.id);
   }
 
   static async findOrCreateBy(params) {
