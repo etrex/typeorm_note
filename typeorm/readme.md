@@ -1,8 +1,8 @@
-# 開始使用 Typeorm
+# 開始使用 TypeORM
 
-本章節將說明如何在專案中使用 Typeorm，包含：
+本章節將說明如何在專案中使用 TypeORM，包含：
 
-1. 安裝 Typeorm
+1. 安裝 TypeORM
 2. 環境設定
 3. 建立連線
 

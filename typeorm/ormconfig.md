@@ -31,7 +31,7 @@ TYPEORM_LOGGING=true
 
 # 參數解說
 
-Typeorm 會讀取專案根目錄下的 ormconfig 這個設定檔來進行初始化。
+TypeORM 會讀取專案根目錄下的 ormconfig 這個設定檔來進行初始化。
 
 以下將一一說明其意義：
 

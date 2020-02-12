@@ -1,6 +1,6 @@
-# 安裝 Typeorm
+# 安裝 TypeORM
 
-我們需要安裝 typeorm 以及搭配使用的資料庫，在本教學當中使用 postgresql，以下是安裝所需套件的指令。
+我們需要安裝 TypeORM 以及搭配使用的資料庫，在本教學當中使用 postgresql，以下是安裝所需套件的指令。
 
 ```bash
 yarn add typeorm reflect-metadata pg
