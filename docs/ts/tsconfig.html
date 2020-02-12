@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="package.html" />
+    <link rel="next" href="file-rewrite.html" />
     
     
-    <link rel="prev" href="file-rewrite.html" />
+    <link rel="prev" href="install.html" />
     
 
     </head>
@@ -120,7 +120,7 @@
                 <a href="readme.html">
             
                     
-                    開始使用 Typescript
+                    開始使用 TypeScript
             
                 </a>
             
@@ -129,12 +129,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="file-rewrite.html">
+        <li class="chapter " data-level="1.3.1" data-path="install.html">
             
-                <a href="file-rewrite.html">
+                <a href="install.html">
             
                     
-                    修改檔案
+                    安裝 TypeScript
             
                 </a>
             
@@ -155,7 +155,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="package.html">
+        <li class="chapter " data-level="1.3.3" data-path="file-rewrite.html">
+            
+                <a href="file-rewrite.html">
+            
+                    
+                    修改檔案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="package.html">
             
                 <a href="package.html">
             
@@ -168,7 +181,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="build.html">
+        <li class="chapter " data-level="1.3.5" data-path="build.html">
             
                 <a href="build.html">
             
@@ -542,29 +555,42 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x8A2D;&#x5B9A;-tsconfigjson">&#x8A2D;&#x5B9A; tsconfig.json</h1>
+<ul>
+<li><a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x4EF6;</a></li>
+<li><a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank">compiler options</a></li>
+</ul>
 <p>&#x65B0;&#x589E;&#x8A2D;&#x5B9A;&#x6A94; <code>tsconfig.json</code> &#x5230;&#x5C08;&#x6848;&#x6839;&#x76EE;&#x9304;&#xFF0C;&#x5176;&#x5167;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-json">{
-  <span class="hljs-string">&quot;include&quot;</span>: [<span class="hljs-string">&quot;src/**/*&quot;</span>],
   <span class="hljs-string">&quot;exclude&quot;</span>: [<span class="hljs-string">&quot;**/__tests__&quot;</span>, <span class="hljs-string">&quot;**/*.{spec,test}.ts&quot;</span>],
   <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
-    <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>,
-    <span class="hljs-string">&quot;lib&quot;</span>: [<span class="hljs-string">&quot;es2017&quot;</span>, <span class="hljs-string">&quot;esnext.asynciterable&quot;</span>],
-    <span class="hljs-string">&quot;module&quot;</span>: <span class="hljs-string">&quot;commonjs&quot;</span>,
-    <span class="hljs-string">&quot;skipLibCheck&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-string">&quot;moduleResolution&quot;</span>: <span class="hljs-string">&quot;node&quot;</span>,
-    <span class="hljs-string">&quot;esModuleInterop&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-string">&quot;emitDecoratorMetadata&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-string">&quot;experimentalDecorators&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-string">&quot;forceConsistentCasingInFileNames&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-string">&quot;resolveJsonModule&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-comment">// &#x57FA;&#x790E;&#x8A2D;&#x5B9A;&#x9078;&#x9805;</span>
+    <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;es5&quot;</span>, <span class="hljs-comment">// &#x8F38;&#x51FA; ECMAScript &#x7248;&#x672C;&#xFF0C;&#x9810;&#x8A2D;&#x662F; es5</span>
+    <span class="hljs-string">&quot;module&quot;</span>: <span class="hljs-string">&quot;commonjs&quot;</span>, <span class="hljs-comment">// &#x6307;&#x5B9A;&#x751F;&#x6210;&#x54EA;&#x4E00;&#x7A2E; module,</span>
+    <span class="hljs-string">&quot;lib&quot;</span>: [<span class="hljs-string">&quot;es2017&quot;</span>, <span class="hljs-string">&quot;esnext.asynciterable&quot;</span>], <span class="hljs-comment">// &#x5217;&#x8209;&#x51FA;&#x7DE8;&#x8B6F;&#x8981;&#x5F15;&#x7528;&#x7684; library&#xFF0C;&#x7279;&#x5B9A;&#x8A9E;&#x6CD5;&#x4F8B;&#x5982; Object.assign &#x70BA; ES6 &#x7684;&#x8A9E;&#x6CD5;</span>
+    <span class="hljs-string">&quot;rootDir&quot;</span>: <span class="hljs-string">&quot;./src&quot;</span>, <span class="hljs-comment">// &#x5BA3;&#x544A; TS &#x7684; root &#x8CC7;&#x6599;&#x593E;&#xFF0C;&#x4E0D;&#x80FD; import &#x5728;&#x9019;&#x4EE5;&#x5916;&#x7684; ts &#x6A94;</span>
+    <span class="hljs-string">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./dist&quot;</span>, <span class="hljs-comment">// &#x7DE8;&#x8B6F;&#x5F8C;&#x7684;&#x7D50;&#x679C;&#x8981;&#x8F38;&#x51FA;&#x5230;&#x54EA;&#x88E1;</span>
     <span class="hljs-string">&quot;isolatedModules&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-string">&quot;rootDir&quot;</span>: <span class="hljs-string">&quot;./src&quot;</span>,
-    <span class="hljs-string">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./dist&quot;</span>,
-    <span class="hljs-string">&quot;types&quot;</span>: [<span class="hljs-string">&quot;node&quot;</span>, <span class="hljs-string">&quot;jest&quot;</span>],
-    <span class="hljs-string">&quot;strict&quot;</span>: <span class="hljs-literal">false</span>
-  }
+
+    <span class="hljs-comment">// &#x6AA2;&#x67E5;&#x6A21;&#x5F0F;&#x9078;&#x9805;</span>
+    <span class="hljs-string">&quot;strict&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;types&quot;</span>: [<span class="hljs-string">&quot;node&quot;</span>, <span class="hljs-string">&quot;jest&quot;</span>], <span class="hljs-comment">// &#x5217;&#x8209;&#x51FA;&#x8981;&#x88AB; compile &#x7528;&#x7684; type declaration files</span>
+    <span class="hljs-string">&quot;skipLibCheck&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// type declaration files &#x4E0D;&#x505A; type checking</span>
+    <span class="hljs-string">&quot;forceConsistentCasingInFileNames&quot;</span>: <span class="hljs-literal">true</span>,
+
+    <span class="hljs-comment">// module &#x89E3;&#x6790;&#x9078;&#x9805;</span>
+    <span class="hljs-string">&quot;moduleResolution&quot;</span>: <span class="hljs-string">&quot;node&quot;</span>, <span class="hljs-comment">// &#x89E3;&#x6790; module &#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6709; classic &#x548C; node</span>
+    <span class="hljs-string">&quot;esModuleInterop&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// &#x517C;&#x5BB9; CommonJS module &#x5F15;&#x5165;&#xFF0C;&#x7B26;&#x5408; ES6 module &#x898F;&#x7BC4;</span>
+    <span class="hljs-string">&quot;resolveJsonModule&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// &#x8B93; TS &#x53EF;&#x4EE5;&#x89E3;&#x6790; JSON &#x6A94;&#xFF0C;&#x89E3;&#x6790;&#x51FA;&#x76F8;&#x5C0D;&#x61C9;&#x7684; type</span>
+
+    <span class="hljs-comment">// &#x5BE6;&#x9A57;&#x6027;&#x8CEA;&#x9078;&#x9805;</span>
+    <span class="hljs-string">&quot;experimentalDecorators&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// &#x5141;&#x8A31;&#x4F7F;&#x7528;&#x5BE6;&#x9A57;&#x968E;&#x6BB5;&#x7684; ES7 decorators</span>
+    <span class="hljs-string">&quot;emitDecoratorMetadata&quot;</span>: <span class="hljs-literal">true</span>,
 }
 </code></pre>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="https://ithelp.ithome.com.tw/articles/10222025" target="_blank">https://ithelp.ithome.com.tw/articles/10222025</a></li>
+</ul>
 
                                 
                                 </section>
@@ -592,12 +618,12 @@
 
             
                 
-                <a href="file-rewrite.html" class="navigation navigation-prev " aria-label="Previous page: 修改檔案">
+                <a href="install.html" class="navigation navigation-prev " aria-label="Previous page: 安裝 TypeScript">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="package.html" class="navigation navigation-next " aria-label="Next page: 設定 package.json">
+                <a href="file-rewrite.html" class="navigation navigation-next " aria-label="Next page: 修改檔案">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -608,7 +634,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"設定 tsconfig.json","level":"1.3.2","depth":2,"next":{"title":"設定 package.json","level":"1.3.3","depth":2,"path":"ts/package.md","ref":"ts/package.md","articles":[]},"previous":{"title":"修改檔案","level":"1.3.1","depth":2,"path":"ts/file-rewrite.md","ref":"ts/file-rewrite.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ts/tsconfig.md","mtime":"2020-02-10T16:13:53.859Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-11T07:39:40.661Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"設定 tsconfig.json","level":"1.3.2","depth":2,"next":{"title":"修改檔案","level":"1.3.3","depth":2,"path":"ts/file-rewrite.md","ref":"ts/file-rewrite.md","articles":[]},"previous":{"title":"安裝 TypeScript","level":"1.3.1","depth":2,"path":"ts/install.md","ref":"ts/install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ts/tsconfig.md","mtime":"2020-02-12T03:51:02.326Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-12T03:51:23.879Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

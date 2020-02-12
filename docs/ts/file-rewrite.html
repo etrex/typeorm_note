@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="tsconfig.html" />
+    <link rel="next" href="package.html" />
     
     
-    <link rel="prev" href="readme.html" />
+    <link rel="prev" href="tsconfig.html" />
     
 
     </head>
@@ -120,7 +120,7 @@
                 <a href="readme.html">
             
                     
-                    開始使用 Typescript
+                    開始使用 TypeScript
             
                 </a>
             
@@ -129,12 +129,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="file-rewrite.html">
+        <li class="chapter " data-level="1.3.1" data-path="install.html">
             
-                <a href="file-rewrite.html">
+                <a href="install.html">
             
                     
-                    修改檔案
+                    安裝 TypeScript
             
                 </a>
             
@@ -155,7 +155,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="package.html">
+        <li class="chapter active" data-level="1.3.3" data-path="file-rewrite.html">
+            
+                <a href="file-rewrite.html">
+            
+                    
+                    修改檔案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="package.html">
             
                 <a href="package.html">
             
@@ -168,7 +181,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="build.html">
+        <li class="chapter " data-level="1.3.5" data-path="build.html">
             
                 <a href="build.html">
             
@@ -544,9 +557,10 @@
                                 <h1 id="&#x4FEE;&#x6539;&#x6A94;&#x6848;">&#x4FEE;&#x6539;&#x6A94;&#x6848;</h1>
 <p>&#x5C07; <code>src/index.js</code> &#x7684;&#x526F;&#x6A94;&#x540D;&#x6539;&#x70BA; <code>.ts</code>&#x3002;</p>
 <p>&#x7136;&#x5F8C;&#x5C07; <code>src/index.js</code> &#x7A0B;&#x5F0F;&#x78BC;&#x4E2D;&#x7684; <code>module.exports =</code> &#x6539;&#x70BA; <code>export default</code>&#x3002;</p>
-<p>&#x4E26;&#x4E14;&#x4FEE;&#x6539; <code>index.js</code> &#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>module.exports = require(&apos;./dist&apos;).default;
+<p>&#x4E26;&#x4E14;&#x4FEE;&#x6539; root &#x7684; <code>index.js</code> &#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./dist&apos;</span>).default;
 </code></pre>
+
                                 
                                 </section>
                             
@@ -573,12 +587,12 @@
 
             
                 
-                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: 開始使用 Typescript">
+                <a href="tsconfig.html" class="navigation navigation-prev " aria-label="Previous page: 設定 tsconfig.json">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="tsconfig.html" class="navigation navigation-next " aria-label="Next page: 設定 tsconfig.json">
+                <a href="package.html" class="navigation navigation-next " aria-label="Next page: 設定 package.json">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -589,7 +603,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"修改檔案","level":"1.3.1","depth":2,"next":{"title":"設定 tsconfig.json","level":"1.3.2","depth":2,"path":"ts/tsconfig.md","ref":"ts/tsconfig.md","articles":[]},"previous":{"title":"開始使用 Typescript","level":"1.3","depth":1,"path":"ts/readme.md","ref":"ts/readme.md","articles":[{"title":"修改檔案","level":"1.3.1","depth":2,"path":"ts/file-rewrite.md","ref":"ts/file-rewrite.md","articles":[]},{"title":"設定 tsconfig.json","level":"1.3.2","depth":2,"path":"ts/tsconfig.md","ref":"ts/tsconfig.md","articles":[]},{"title":"設定 package.json","level":"1.3.3","depth":2,"path":"ts/package.md","ref":"ts/package.md","articles":[]},{"title":"編譯","level":"1.3.4","depth":2,"path":"ts/build.md","ref":"ts/build.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ts/file-rewrite.md","mtime":"2020-02-11T06:17:16.899Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-11T07:39:40.661Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"修改檔案","level":"1.3.3","depth":2,"next":{"title":"設定 package.json","level":"1.3.4","depth":2,"path":"ts/package.md","ref":"ts/package.md","articles":[]},"previous":{"title":"設定 tsconfig.json","level":"1.3.2","depth":2,"path":"ts/tsconfig.md","ref":"ts/tsconfig.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ts/file-rewrite.md","mtime":"2020-02-12T03:51:02.325Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-12T03:51:23.879Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
