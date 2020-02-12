@@ -30,7 +30,8 @@
 
     // 實驗性質選項
     "experimentalDecorators": true, // 允許使用實驗階段的 ES7 decorators
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": true
+  }
 }
 ```
 
