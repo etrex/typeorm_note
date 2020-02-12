@@ -7,7 +7,7 @@
 ```ts
 import 'reflect-metadata';
 import { createConnection } from 'typeorm';
-import { Qna } from './entity/Qna';
+import Qna from './entity/Qna';
 
 createConnection()
   .then(async connection => {
@@ -22,8 +22,8 @@ export default async function App(context: any) {
   });
 
   const qna = await Qna.findOne({ question: context.event.text });
-  const response_message = qna?.answer ?? 'Hello, TypeORM!';
-  await context.sendText(response_message);
+  const responseMessage = qna?.answer ?? 'Hello, TypeORM!';
+  await context.sendText(responseMessage);
 }
 ```
 

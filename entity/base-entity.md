@@ -59,7 +59,7 @@ import { Entity, Column } from 'typeorm';
 import Base from './Base';
 
 @Entity()
-export class Qna extends Base {
+export default class Qna extends Base {
   @Column()
   question: string;
 
