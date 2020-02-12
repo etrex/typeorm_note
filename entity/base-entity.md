@@ -39,7 +39,7 @@ export default class Base extends BaseEntity {
 
   static async findOrCreateBy(params) {
     const entity = await this.findOne(params);
-    if (entity != null) {
+    if (entity !== undefined) {
       return entity;
     }
     return await this.build(params);
@@ -47,7 +47,7 @@ export default class Base extends BaseEntity {
 
   static async exists(params) {
     const entity = await this.findOne(params);
-    return entity != null;
+    return entity !== undefined;
   }
 }
 ```

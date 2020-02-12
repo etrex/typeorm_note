@@ -10,9 +10,9 @@ const d = await D.build({ c });
 一般情況下的查詢，不會取得任何關聯內容。
 
 ```ts
-const query = await D.findOne({ id: d.id, relations: ['c'] });
+const query = await D.findOne(d.id);
 console.log(query.c); // undefined
-// 你也無法取得外來鍵的值
+// 無法取得外來鍵的值
 console.log(query.cId); // undefined
 ```
 
