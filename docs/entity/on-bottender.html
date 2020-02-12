@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../relation/readme.html" />
+    <link rel="next" href="validation.html" />
     
     
     <link rel="prev" href="./" />
@@ -368,20 +368,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="validation.html">
-            
-                <a href="validation.html">
-            
-                    
-                    資料驗證 - Validation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="./">
+        <li class="chapter " data-level="1.6.3" data-path="./">
             
                 <a href="./">
             
@@ -394,12 +381,25 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.5" data-path="on-bottender.html">
+        <li class="chapter active" data-level="1.6.4" data-path="on-bottender.html">
             
                 <a href="on-bottender.html">
             
                     
                     在 Bottender 上使用 Entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="validation.html">
+            
+                <a href="validation.html">
+            
+                    
+                    資料驗證 - Validation
             
                 </a>
             
@@ -605,7 +605,7 @@ createConnection()
 <pre><code class="lang-ts"><span class="hljs-keyword">const</span> response_message = qna?.answer ?? <span class="hljs-string">&apos;Hello, TypeORM!&apos;</span>;
 </code></pre>
 <p>TypeORM &#x5C31;&#x662F;&#x9019;&#x9EBC;&#x7C21;&#x55AE;&#x3002;</p>
-<p>&#x9019;&#x88E1;&#x7528;&#x5230;&#x7684; findOne &#x662F;&#x4F86;&#x81EA;&#x65BC; TypeORM &#x5167;&#x5EFA;&#x7684; BaseEntity&#xFF0C;&#x8A73;&#x7D30;&#x8AAA;&#x660E;&#x8ACB;&#x53C3;&#x8003;&#x5B98;&#x65B9;&#x6587;&#x4EF6;&#xFF1A;<a href="https://typeorm.io/#/active-record-data-mapper" target="_blank">https://typeorm.io/#/active-record-data-mapper</a></p>
+<p>&#x9019;&#x88E1;&#x7528;&#x5230;&#x7684; findOne &#x662F;&#x4F86;&#x81EA;&#x65BC; TypeORM &#x5167;&#x5EFA;&#x7684; BaseEntity&#xFF0C;&#x95DC;&#x65BC; BaseEntity &#x7684;&#x8A73;&#x7D30;&#x8AAA;&#x660E;&#x8ACB;&#x53C3;&#x8003;&#x5B98;&#x65B9;&#x6587;&#x4EF6;&#xFF1A;<a href="https://typeorm.io/#/active-record-data-mapper" target="_blank">https://typeorm.io/#/active-record-data-mapper</a></p>
 
                                 
                                 </section>
@@ -638,7 +638,7 @@ createConnection()
                 </a>
                 
                 
-                <a href="../relation/readme.html" class="navigation navigation-next " aria-label="Next page: 關聯 - Relation">
+                <a href="validation.html" class="navigation navigation-next " aria-label="Next page: 資料驗證 - Validation">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -649,7 +649,7 @@ createConnection()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"在 Bottender 上使用 Entity","level":"1.6.5","depth":2,"next":{"title":"關聯 - Relation","level":"1.7","depth":1,"path":"relation/readme.md","ref":"relation/readme.md","articles":[{"title":"建立一對一關聯","level":"1.7.1","depth":2,"path":"relation/one-to-one.md","ref":"relation/one-to-one.md","articles":[]},{"title":"建立一對多關聯","level":"1.7.2","depth":2,"path":"relation/one-to-many.md","ref":"relation/one-to-many.md","articles":[]},{"title":"建立多對多關聯","level":"1.7.3","depth":2,"path":"relation/many-to-many.md","ref":"relation/many-to-many.md","articles":[]},{"title":"Eager 和 Lazy 的毛","level":"1.7.4","depth":2,"path":"relation/eager-and-lazy.md","ref":"relation/eager-and-lazy.md","articles":[]},{"title":"寫入關聯的方式","level":"1.7.5","depth":2,"path":"relation/insert.md","ref":"relation/insert.md","articles":[]},{"title":"查詢關聯的方式","level":"1.7.6","depth":2,"path":"relation/query.md","ref":"relation/query.md","articles":[]}]},"previous":{"title":"索引 - Index","level":"1.6.4","depth":2,"path":"entity/index.md","ref":"entity/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"entity/on-bottender.md","mtime":"2020-02-12T05:07:42.689Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-12T05:07:57.153Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"在 Bottender 上使用 Entity","level":"1.6.4","depth":2,"next":{"title":"資料驗證 - Validation","level":"1.6.5","depth":2,"path":"entity/validation.md","ref":"entity/validation.md","articles":[]},"previous":{"title":"索引 - Index","level":"1.6.3","depth":2,"path":"entity/index.md","ref":"entity/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"entity/on-bottender.md","mtime":"2020-02-12T05:28:18.796Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-12T05:28:29.967Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

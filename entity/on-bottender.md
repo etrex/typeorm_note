@@ -52,4 +52,4 @@ const response_message = qna?.answer ?? 'Hello, TypeORM!';
 
 TypeORM 就是這麼簡單。
 
-這裡用到的 findOne 是來自於 TypeORM 內建的 BaseEntity，詳細說明請參考官方文件：[https://typeorm.io/#/active-record-data-mapper](https://typeorm.io/#/active-record-data-mapper)
+這裡用到的 findOne 是來自於 TypeORM 內建的 BaseEntity，關於 BaseEntity 的詳細說明請參考官方文件：[https://typeorm.io/#/active-record-data-mapper](https://typeorm.io/#/active-record-data-mapper)
