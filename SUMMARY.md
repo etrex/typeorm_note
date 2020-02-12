@@ -21,6 +21,7 @@
   - [Base Entity](entity/base-entity.md)
   - [資料驗證 - Validation](entity/validation.md)
   - [索引 - Index](entity/index.md)
+  - [在 Bottender 上使用 Entity](entity/on-bottender.md)
 - [關聯 - Relation](relation/readme.md)
   - [建立一對一關聯](relation/one-to-one.md)
   - [建立一對多關聯](relation/one-to-many.md)
