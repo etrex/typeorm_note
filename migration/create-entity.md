@@ -15,7 +15,7 @@ import { Entity } from 'typeorm';
 export class Qna {}
 ```
 
-新增欄位的方式是在 Qna 中加入程式碼如下：
+在這裡請直接修改 Qna，程式碼如下：
 
 ```ts
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
@@ -33,4 +33,4 @@ export default class Qna {
 }
 ```
 
-每一個 entity 都需要指定 PrimaryColumn，在這裡我們用序號遞增的 id 來做。
+可以看見我們用 `@PrimaryGeneratedColumn()`、`@Column()` 來宣告欄位。每一個 entity 都需要指定 PrimaryColumn，在這裡我們用序號遞增的 id 來做。
