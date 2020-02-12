@@ -1,4 +1,4 @@
-# 執行 Migratione
+# 執行 Migration
 
 官方文件：https://typeorm.io/#/migrations/running-and-reverting-migrations
 

@@ -25,7 +25,7 @@ module.exports = config;
 
 ```
 # DB
-POSTGRESQL_URL=postgresql://:localhost:5432/typeorm_test
+POSTGRESQL_URL=postgresql://localhost:5432/typeorm_test
 TYPEORM_LOGGING=true
 ```
 
