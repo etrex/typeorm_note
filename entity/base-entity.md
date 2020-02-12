@@ -8,7 +8,7 @@ Entity 可以用繼承的方式獲得共同的設定值，所以可以製作一�
 
 TypeORM BaseEntity: [https://typeorm.io/#/active-record-data-mapper](https://typeorm.io/#/active-record-data-mapper)
 
-在 `src/entity` 資料夾下新增一個 `base.ts` 檔，撰寫以下內容：
+在 `src/entity` 資料夾下新增一個 `Base.ts` 檔，撰寫以下內容：
 
 ```ts
 import {
@@ -34,7 +34,7 @@ export default class Base extends BaseEntity {
       entity[key] = params[key];
     });
     await entity.save();
-    return await this.findOne(entify.id);
+    return await this.findOne(entity.id);
   }
 
   static async findOrCreateBy(params) {
@@ -52,7 +52,7 @@ export default class Base extends BaseEntity {
 }
 ```
 
-完成後，修改 `src/entity/qna.ts` 如下：
+完成後，修改 `src/entity/Qna.ts` 如下：
 
 ```ts
 import { Entity, Column } from 'typeorm';
