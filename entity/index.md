@@ -16,7 +16,9 @@ question: string;
 question: string;
 ```
 
-都是可以的。
+都是可以的，改好之後進行[標準資料庫遷移流程](https://etrex.tw/typeorm_note/migration/run-migration.html)。
+
+可以發現到在 qna 表格上新增了一個索引。
 
 以下說明在 TypeORM 上加入索引的各種細節：
 
