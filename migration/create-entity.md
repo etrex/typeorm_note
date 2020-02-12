@@ -8,22 +8,20 @@ typeorm entity:create -n Qna
 
 會生成以下程式碼：
 
-```
-import {Entity} from "typeorm";
+```ts
+import { Entity } from 'typeorm';
 
 @Entity()
-export class Qna {
-
-}
+export class Qna {}
 ```
 
 新增欄位的方式是在 Qna 中加入程式碼如下：
 
-```
-import {Entity, Column, PrimaryGeneratedColumn} from "typeorm";
+```ts
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Qna {
+export default class Qna {
   @PrimaryGeneratedColumn()
   id: number;
 
