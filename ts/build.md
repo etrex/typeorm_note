@@ -11,3 +11,9 @@ yarn build
 ```
 yarn dev
 ```
+
+# 啟動
+
+```
+yarn start
+```

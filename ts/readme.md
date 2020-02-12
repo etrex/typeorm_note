@@ -1,10 +1,11 @@
-# 開始使用 Typescript
+# 開始使用 TypeScript
 
-安裝 typescript 的流程如下：
+使用 TypeScript 的流程如下：
 
-1. 將 `src/index.js` 改寫為 typescript
-2. 加入設定檔 `tsconfig.json` 到專案根目錄
-3. 修改 `package.json`
-4. 嘗試編譯
+1. 安裝 TypeScript
+2. 設置 `tsconfig.json`
+3. 將 `src/index.js` 改寫為 TypeScript 版本
+4. 修改 `package.json`
+5. 嘗試編譯
 
 以下將一步步說明。
