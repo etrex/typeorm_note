@@ -8,7 +8,7 @@ import Base from './Base';
 import D from './D';
 
 @Entity()
-export class C extends Base {
+export default class C extends Base {
   @OneToMany(
     type => D,
     d => d.c
@@ -23,7 +23,7 @@ import Base from './Base';
 import C from './C';
 
 @Entity()
-export class D extends Base {
+export default class D extends Base {
   @ManyToOne(
     type => C,
     c => c.ds

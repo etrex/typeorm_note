@@ -581,7 +581,103 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5728;-bottender-&#x4E0A;&#x4F7F;&#x7528;-relations">&#x5728; Bottender &#x4E0A;&#x4F7F;&#x7528; Relations</h1>
-<p>&#x4F5C;&#x8005;&#x5916;&#x51FA;&#x53D6;&#x6750;&#xFF0C;&#x4F11;&#x520A;&#x4E00;&#x56DE;&#x3002;</p>
+<p>&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x8A66;&#x8457;&#x5C07;&#x539F;&#x672C;&#x7684; Entity Qna &#x7576;&#x4E2D;&#x7684; question &#x4EE5;&#x53CA; answer &#x7684;&#x5B57;&#x4E32;&#x6B04;&#x4F4D;&#x6539;&#x6210;&#x95DC;&#x806F;&#xFF0C;&#x800C;&#x6211;&#x5011;&#x53E6;&#x958B;&#x4E00;&#x500B; Entity &#x53EB;&#x505A; Sentence&#xFF0C;&#x9019;&#x6A23;&#x505A;&#x7684;&#x597D;&#x8655;&#x662F;&#x7576; question &#x4EE5;&#x53CA; answer &#x6709;&#x51FA;&#x73FE;&#x91CD;&#x8907;&#x6587;&#x5B57;&#x7684;&#x6642;&#x5019;&#x53EF;&#x4EE5;&#x7BC0;&#x7701;&#x5132;&#x5B58;&#x7A7A;&#x9593;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x5C31;&#x662F;&#x8981;&#x5728; <code>src/entity</code> &#x4E0B;&#x65B0;&#x589E; <code>Sentence.ts</code> &#x6A94;&#x6848;&#xFF0C;&#x5167;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { Entity, Column, OneToMany } from <span class="hljs-string">&apos;typeorm&apos;</span>;
+<span class="hljs-keyword">import</span> Base from <span class="hljs-string">&apos;./Base&apos;</span>;
+<span class="hljs-keyword">import</span> Qna from <span class="hljs-string">&apos;./Qna&apos;</span>;
+
+@Entity()
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> Sentence extends Base {
+  @Column({ unique: <span class="hljs-literal">true</span> })
+  content: <span class="hljs-built_in">string</span>;
+
+  @OneToMany(
+    <span class="hljs-keyword">type</span> =&gt; Qna,
+    qna =&gt; qna.question
+  )
+  questions: Qna[];
+
+  @OneToMany(
+    <span class="hljs-keyword">type</span> =&gt; Qna,
+    qna =&gt; qna.answer
+  )
+  answers: Qna[];
+
+  <span class="hljs-keyword">static</span> async <span class="hljs-keyword">get</span>(content) {
+    <span class="hljs-keyword">return</span> (await Sentence.findOrCreateBy({ content })) as Sentence;
+  }
+}
+</code></pre>
+<p>&#x7136;&#x5F8C;&#x4FEE;&#x6539;&#x539F;&#x672C;&#x7684; Qna.ts &#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { Entity, ManyToOne } from <span class="hljs-string">&apos;typeorm&apos;</span>;
+<span class="hljs-keyword">import</span> Base from <span class="hljs-string">&apos;./Base&apos;</span>;
+<span class="hljs-keyword">import</span> Sentence from <span class="hljs-string">&apos;./Sentence&apos;</span>;
+
+@Entity()
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> Qna extends Base {
+  @ManyToOne(
+    <span class="hljs-keyword">type</span> =&gt; Sentence,
+    sentence =&gt; sentence.questions,
+    {
+      eager: <span class="hljs-literal">true</span>,
+    }
+  )
+  question: Sentence;
+
+  @ManyToOne(
+    <span class="hljs-keyword">type</span> =&gt; Sentence,
+    sentence =&gt; sentence.answers,
+    {
+      eager: <span class="hljs-literal">true</span>,
+    }
+  )
+  answer: Sentence;
+}
+</code></pre>
+<p>&#x8A18;&#x5F97;&#x6539;&#x5B8C; Entity &#x4E4B;&#x5F8C;&#x8981;&#x505A; migration &#x54E6;&#x3002;</p>
+<p>&#x63A5;&#x8457;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x4E3B;&#x7A0B;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;reflect-metadata&apos;</span>;
+<span class="hljs-keyword">import</span> { createConnection } from <span class="hljs-string">&apos;typeorm&apos;</span>;
+<span class="hljs-keyword">import</span> Qna from <span class="hljs-string">&apos;./entity/Qna&apos;</span>;
+<span class="hljs-keyword">import</span> Sentence from <span class="hljs-string">&apos;./entity/Sentence&apos;</span>;
+
+createConnection()
+  .then(async connection =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Connection established.&apos;</span>);
+  })
+  .catch(error =&gt; <span class="hljs-built_in">console</span>.log(error));
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> async <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params">context: <span class="hljs-built_in">any</span></span>) </span>{
+  <span class="hljs-keyword">const</span> qna = <span class="hljs-keyword">new</span> Qna();
+  qna.question = await Sentence.get(<span class="hljs-string">&apos;&#x4F60;&#x597D;&#x55CE;&apos;</span>);
+  qna.answer = await Sentence.get(<span class="hljs-string">&apos;&#x6211;&#x5F88;&#x597D;&apos;</span>);
+  await qna.save();
+
+  <span class="hljs-keyword">const</span> query = await Qna.findOne({
+    question: await Sentence.get(context.event.text),
+  });
+
+  <span class="hljs-keyword">const</span> responseMessage = query?.answer?.content ?? <span class="hljs-string">&apos;Hello, TypeORM!&apos;</span>;
+  await context.sendText(responseMessage);
+}
+</code></pre>
+<p>&#x5C31;&#x80FD;&#x7372;&#x5F97;&#x8DDF;&#x539F;&#x672C;&#x76F8;&#x540C;&#x529F;&#x80FD;&#x7684;&#x7A0B;&#x5F0F;&#x56C9;&#xFF01;</p>
+<p>&#x4E0D;&#x904E;&#x9019;&#x6A23;&#x5176;&#x5BE6;&#x662F;&#x6709;&#x554F;&#x984C;&#x7684;&#xFF0C;&#x56E0;&#x70BA;&#x6211;&#x5011;&#x7684; query &#x5176;&#x5BE6;&#x4E0B;&#x4E86;&#x5169;&#x6B21;&#x7684; SQL &#x6307;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> query = await Qna.findOne({
+  question: await Sentence.get(context.event.text),
+});
+</code></pre>
+<p>&#x5982;&#x679C;&#x8981;&#x8B93;&#x4ED6;&#x7E2E;&#x77ED;&#x6210;&#x4E00;&#x6B21;&#x7684;&#x8A71;&#x5C31;&#x5FC5;&#x9808;&#x4F7F;&#x7528; QueryBuilder &#x7684;&#x5BEB;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> query = await Qna.createQueryBuilder(<span class="hljs-string">&apos;qna&apos;</span>)
+  .leftJoinAndSelect(<span class="hljs-string">&apos;qna.question&apos;</span>, <span class="hljs-string">&apos;question&apos;</span>)
+  .leftJoinAndSelect(<span class="hljs-string">&apos;qna.answer&apos;</span>, <span class="hljs-string">&apos;answer&apos;</span>)
+  .where(<span class="hljs-string">&apos;question.content = :content&apos;</span>, { content: context.event.text })
+  .getOne();
+</code></pre>
+<p>&#x53EF;&#x6190;&#x54EA;&#x3002;</p>
+<h1 id="&#x53C3;&#x8003;&#x8CC7;&#x6599;">&#x53C3;&#x8003;&#x8CC7;&#x6599;</h1>
+<p>&#x53EA;&#x80FD;&#x4F7F;&#x7528; QueryBuilder &#x5C0D;&#x95DC;&#x806F;&#x4E0B;&#x67E5;&#x8A62;&#x689D;&#x4EF6;&#xFF1A;<a href="https://github.com/typeorm/typeorm/issues/1916" target="_blank">https://github.com/typeorm/typeorm/issues/1916</a></p>
 
                                 
                                 </section>
@@ -625,7 +721,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"在 Bottender 上使用 Entity","level":"1.7.7","depth":2,"next":{"title":"交易 - Transaction","level":"1.8","depth":1,"path":"relation/readme.md","ref":"relation/readme.md","articles":[]},"previous":{"title":"Eager 和 Lazy 的毛","level":"1.7.6","depth":2,"path":"relation/eager-and-lazy.md","ref":"relation/eager-and-lazy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"relation/on-bottender.md","mtime":"2020-02-12T07:10:51.789Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-12T10:10:52.926Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"在 Bottender 上使用 Entity","level":"1.7.7","depth":2,"next":{"title":"交易 - Transaction","level":"1.8","depth":1,"path":"relation/readme.md","ref":"relation/readme.md","articles":[]},"previous":{"title":"Eager 和 Lazy 的毛","level":"1.7.6","depth":2,"path":"relation/eager-and-lazy.md","ref":"relation/eager-and-lazy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"relation/on-bottender.md","mtime":"2020-02-13T20:10:24.783Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-13T20:10:56.269Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
