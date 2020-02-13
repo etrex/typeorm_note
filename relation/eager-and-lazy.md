@@ -12,20 +12,7 @@ const query = await D.findOne(d.id);
 
 # Eager
 
-```ts
-import { Entity, OneToMany } from 'typeorm';
-import Base from './Base';
-import D from './D';
-
-@Entity()
-export default class C extends Base {
-  @OneToMany(
-    type => D,
-    d => d.c
-  )
-  ds: D[];
-}
-```
+以下是採用了 Eager 後的 Entity D：
 
 ```ts
 import { Entity, ManyToOne } from 'typeorm';
@@ -43,7 +30,7 @@ export default class D extends Base {
 }
 ```
 
-我們在 Entity D 的關聯上加上 { eager: true }，就能夠在每次查詢 d 的時候就自動預載 c 囉！
+和原本不同的地方是我們在 Entity D 的關聯上加上 { eager: true }，就能夠在每次查詢 d 的時候就自動預載 c 囉！
 
 # Eager 的限制
 
@@ -61,7 +48,7 @@ Lazy 可以讓在你需要的時候才去查詢物件，比方說原本 d.c 是 
 const c = await d.c;
 ```
 
-在 Entity 上要這麼寫：
+在 Entity D 上要這麼寫：
 
 ```ts
 @Entity()
@@ -98,7 +85,7 @@ await d.save();
 
 這兩邊都有蠻大的缺點，除非真的適用的場景，我認為應該盡可能避免使用 eager 和 lazy。
 
-# RelationId Column
+# Relation Id Column
 
 一開始提到的 query 本身無法取得 relation id 的問題其實是有解的，只要在 Entity D 增加一個與 relation id 同名的 Column 就能取得：
 
@@ -120,11 +107,16 @@ export default class D extends Base {
 }
 ```
 
+之後在做查詢時：
+
 ```ts
 const query = await D.findOne(d.id);
 ```
 
+就可以獲得 query.cId 的值。
+
 # 參考資料
 
 [官方文件 - eager-and-lazy-relations](https://typeorm.io/#/eager-and-lazy-relations)
+
 [官方文件 - relations-faq](https://typeorm.io/#/relations-faq)

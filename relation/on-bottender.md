@@ -32,6 +32,8 @@ export default class Sentence extends Base {
 }
 ```
 
+在這裡我們將 content 欄位加上了唯一限制，這樣可以確保資料不會重複。此外我們也增加了一個方便取用句子的 Sentence.get 方法。
+
 然後修改原本的 Qna.ts 如下：
 
 ```ts
