@@ -22,6 +22,7 @@
     "types": ["node", "jest"], // 列舉出要被 compile 用的 type declaration files
     "skipLibCheck": true, // type declaration files 不做 type checking
     "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false, // 不檢查建構式是否有給初始值
 
     // module 解析選項
     "moduleResolution": "node", // 解析 module 的方法，有 classic 和 node
