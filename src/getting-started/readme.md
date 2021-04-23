@@ -1,4 +1,4 @@
-# 從建立 Bottender 專案開始
+# 從建立 Bottender 專案開始囉
 
 用 create bottender app 指令建立一個新專案，選擇 LINE platform 和 memory session。
 
